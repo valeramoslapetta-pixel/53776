@@ -1,4 +1,4 @@
-// Generated from c:/Users/valer/ssl-antlr-calculator/Calculator.g4 by ANTLR 4.13.1
+// Generated from c:/Users/valer/OneDrive/Escritorio/vale/sintaxis/53776/Calculator.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -7,109 +7,93 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface CalculatorListener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by {@link CalculatorParser#prog}.
+	 * Enter a parse tree produced by {@link CalculatorParser#programa}.
 	 * @param ctx the parse tree
 	 */
-	void enterProg(CalculatorParser.ProgContext ctx);
+	void enterPrograma(CalculatorParser.ProgramaContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CalculatorParser#prog}.
+	 * Exit a parse tree produced by {@link CalculatorParser#programa}.
 	 * @param ctx the parse tree
 	 */
-	void exitProg(CalculatorParser.ProgContext ctx);
+	void exitPrograma(CalculatorParser.ProgramaContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code printExpr}
-	 * labeled alternative in {@link CalculatorParser#stat}.
+	 * Enter a parse tree produced by {@link CalculatorParser#instrucciones}.
 	 * @param ctx the parse tree
 	 */
-	void enterPrintExpr(CalculatorParser.PrintExprContext ctx);
+	void enterInstrucciones(CalculatorParser.InstruccionesContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code printExpr}
-	 * labeled alternative in {@link CalculatorParser#stat}.
+	 * Exit a parse tree produced by {@link CalculatorParser#instrucciones}.
 	 * @param ctx the parse tree
 	 */
-	void exitPrintExpr(CalculatorParser.PrintExprContext ctx);
+	void exitInstrucciones(CalculatorParser.InstruccionesContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code assign}
-	 * labeled alternative in {@link CalculatorParser#stat}.
+	 * Enter a parse tree produced by {@link CalculatorParser#instruccion}.
 	 * @param ctx the parse tree
 	 */
-	void enterAssign(CalculatorParser.AssignContext ctx);
+	void enterInstruccion(CalculatorParser.InstruccionContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code assign}
-	 * labeled alternative in {@link CalculatorParser#stat}.
+	 * Exit a parse tree produced by {@link CalculatorParser#instruccion}.
 	 * @param ctx the parse tree
 	 */
-	void exitAssign(CalculatorParser.AssignContext ctx);
+	void exitInstruccion(CalculatorParser.InstruccionContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code blank}
-	 * labeled alternative in {@link CalculatorParser#stat}.
+	 * Enter a parse tree produced by {@link CalculatorParser#bucle}.
 	 * @param ctx the parse tree
 	 */
-	void enterBlank(CalculatorParser.BlankContext ctx);
+	void enterBucle(CalculatorParser.BucleContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code blank}
-	 * labeled alternative in {@link CalculatorParser#stat}.
+	 * Exit a parse tree produced by {@link CalculatorParser#bucle}.
 	 * @param ctx the parse tree
 	 */
-	void exitBlank(CalculatorParser.BlankContext ctx);
+	void exitBucle(CalculatorParser.BucleContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code parens}
-	 * labeled alternative in {@link CalculatorParser#expr}.
+	 * Enter a parse tree produced by {@link CalculatorParser#salida}.
 	 * @param ctx the parse tree
 	 */
-	void enterParens(CalculatorParser.ParensContext ctx);
+	void enterSalida(CalculatorParser.SalidaContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code parens}
-	 * labeled alternative in {@link CalculatorParser#expr}.
+	 * Exit a parse tree produced by {@link CalculatorParser#salida}.
 	 * @param ctx the parse tree
 	 */
-	void exitParens(CalculatorParser.ParensContext ctx);
+	void exitSalida(CalculatorParser.SalidaContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code MulDiv}
-	 * labeled alternative in {@link CalculatorParser#expr}.
+	 * Enter a parse tree produced by {@link CalculatorParser#condicion}.
 	 * @param ctx the parse tree
 	 */
-	void enterMulDiv(CalculatorParser.MulDivContext ctx);
+	void enterCondicion(CalculatorParser.CondicionContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code MulDiv}
-	 * labeled alternative in {@link CalculatorParser#expr}.
+	 * Exit a parse tree produced by {@link CalculatorParser#condicion}.
 	 * @param ctx the parse tree
 	 */
-	void exitMulDiv(CalculatorParser.MulDivContext ctx);
+	void exitCondicion(CalculatorParser.CondicionContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code AddSub}
-	 * labeled alternative in {@link CalculatorParser#expr}.
+	 * Enter a parse tree produced by {@link CalculatorParser#cadena}.
 	 * @param ctx the parse tree
 	 */
-	void enterAddSub(CalculatorParser.AddSubContext ctx);
+	void enterCadena(CalculatorParser.CadenaContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code AddSub}
-	 * labeled alternative in {@link CalculatorParser#expr}.
+	 * Exit a parse tree produced by {@link CalculatorParser#cadena}.
 	 * @param ctx the parse tree
 	 */
-	void exitAddSub(CalculatorParser.AddSubContext ctx);
+	void exitCadena(CalculatorParser.CadenaContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code id}
-	 * labeled alternative in {@link CalculatorParser#expr}.
+	 * Enter a parse tree produced by {@link CalculatorParser#caracteres}.
 	 * @param ctx the parse tree
 	 */
-	void enterId(CalculatorParser.IdContext ctx);
+	void enterCaracteres(CalculatorParser.CaracteresContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code id}
-	 * labeled alternative in {@link CalculatorParser#expr}.
+	 * Exit a parse tree produced by {@link CalculatorParser#caracteres}.
 	 * @param ctx the parse tree
 	 */
-	void exitId(CalculatorParser.IdContext ctx);
+	void exitCaracteres(CalculatorParser.CaracteresContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code int}
-	 * labeled alternative in {@link CalculatorParser#expr}.
+	 * Enter a parse tree produced by {@link CalculatorParser#caracter}.
 	 * @param ctx the parse tree
 	 */
-	void enterInt(CalculatorParser.IntContext ctx);
+	void enterCaracter(CalculatorParser.CaracterContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code int}
-	 * labeled alternative in {@link CalculatorParser#expr}.
+	 * Exit a parse tree produced by {@link CalculatorParser#caracter}.
 	 * @param ctx the parse tree
 	 */
-	void exitInt(CalculatorParser.IntContext ctx);
+	void exitCaracter(CalculatorParser.CaracterContext ctx);
 }

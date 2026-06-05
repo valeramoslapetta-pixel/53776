@@ -1,4 +1,4 @@
-// Generated from c:/Users/valer/ssl-antlr-calculator/Calculator.g4 by ANTLR 4.13.1
+// Generated from c:/Users/valer/OneDrive/Escritorio/vale/sintaxis/53776/Calculator.g4 by ANTLR 4.13.1
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -16,109 +16,109 @@ public class CalculatorBaseListener implements CalculatorListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterProg(CalculatorParser.ProgContext ctx) { }
+	@Override public void enterPrograma(CalculatorParser.ProgramaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitProg(CalculatorParser.ProgContext ctx) { }
+	@Override public void exitPrograma(CalculatorParser.ProgramaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPrintExpr(CalculatorParser.PrintExprContext ctx) { }
+	@Override public void enterInstrucciones(CalculatorParser.InstruccionesContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPrintExpr(CalculatorParser.PrintExprContext ctx) { }
+	@Override public void exitInstrucciones(CalculatorParser.InstruccionesContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAssign(CalculatorParser.AssignContext ctx) { }
+	@Override public void enterInstruccion(CalculatorParser.InstruccionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAssign(CalculatorParser.AssignContext ctx) { }
+	@Override public void exitInstruccion(CalculatorParser.InstruccionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterBlank(CalculatorParser.BlankContext ctx) { }
+	@Override public void enterBucle(CalculatorParser.BucleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitBlank(CalculatorParser.BlankContext ctx) { }
+	@Override public void exitBucle(CalculatorParser.BucleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterParens(CalculatorParser.ParensContext ctx) { }
+	@Override public void enterSalida(CalculatorParser.SalidaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitParens(CalculatorParser.ParensContext ctx) { }
+	@Override public void exitSalida(CalculatorParser.SalidaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMulDiv(CalculatorParser.MulDivContext ctx) { }
+	@Override public void enterCondicion(CalculatorParser.CondicionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMulDiv(CalculatorParser.MulDivContext ctx) { }
+	@Override public void exitCondicion(CalculatorParser.CondicionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAddSub(CalculatorParser.AddSubContext ctx) { }
+	@Override public void enterCadena(CalculatorParser.CadenaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAddSub(CalculatorParser.AddSubContext ctx) { }
+	@Override public void exitCadena(CalculatorParser.CadenaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterId(CalculatorParser.IdContext ctx) { }
+	@Override public void enterCaracteres(CalculatorParser.CaracteresContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitId(CalculatorParser.IdContext ctx) { }
+	@Override public void exitCaracteres(CalculatorParser.CaracteresContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterInt(CalculatorParser.IntContext ctx) { }
+	@Override public void enterCaracter(CalculatorParser.CaracterContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitInt(CalculatorParser.IntContext ctx) { }
+	@Override public void exitCaracter(CalculatorParser.CaracterContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

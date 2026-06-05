@@ -8,16 +8,18 @@ import fs from 'fs';
 async function main() {
     let input;
 
-    // Intento leer la entrada desde el archivo input - en forma sincrona.
-    try {
-        input = fs.readFileSync('input.txt', 'utf8');
-    } catch (err) {
-        // Si no es posible leer el archivo, solicitar la entrada del usuario por teclado
-        input = await leerCadena(); // Simula lectura síncrona
-        console.log(input);
-    }
 
-    // Proceso la entrada con el analizador e imprimo el arbol de analisis en formato texto
+
+const archivoEntrada = process.argv[2] || 'input.txt';
+
+try {
+    input = fs.readFileSync(archivoEntrada, 'utf8');
+    console.log(`\nArchivo de entrada: ${archivoEntrada}`);
+} catch (err) {
+    console.error(`No se pudo abrir el archivo: ${archivoEntrada}`);
+    return;
+}
+
     let inputStream = CharStreams.fromString(input);
 let lexer = new CalculatorLexer(inputStream);
 let tokenStream = new CommonTokenStream(lexer);
@@ -37,7 +39,7 @@ for (const token of tokenStream.tokens) {
 let parser = new CalculatorParser(tokenStream);
     let tree = parser.programa();
     
-    // Verifico si se produjeron errores
+    
     if (parser.syntaxErrorsCount > 0) {
         console.error("\nSe encontraron errores de sintaxis en la entrada.");
     } 
@@ -46,11 +48,6 @@ let parser = new CalculatorParser(tokenStream);
         const cadena_tree = tree.toStringTree(parser.ruleNames);
         console.log(`Árbol de derivación: ${cadena_tree}`);
 
-        // Utilizo un listener y un walker para recorrer el arbol e indicar cada vez que reconoce una sentencia (stat)
-        //const listener = new CustomCalculatorListener();
-        // ParseTreeWalker.DEFAULT.walk(listener, tree);
-
-        // Utilizo un visitor para visitar los nodos que me interesan de mi arbol
         const visitor = new CustomCalculatorVisitor();
 const codigoJS = visitor.visit(tree);
 
@@ -76,5 +73,5 @@ function leerCadena() {
     });
 }
 
-// Ejecuta la función principal
+
 main();

@@ -1,4 +1,4 @@
-// Generated from c:/Users/valer/ssl-antlr-calculator/Calculator.g4 by ANTLR 4.13.2
+// Generated from c:/Users/valer/OneDrive/Escritorio/vale/sintaxis/53776/Calculator.g4 by ANTLR 4.13.2
 // jshint ignore: start
 import antlr4 from 'antlr4';
 import CalculatorListener from './CalculatorListener.js';
