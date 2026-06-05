@@ -1,0 +1,30 @@
+programa ::= instrucciones EOF
+
+instrucciones ::= instruccion+
+
+instruccion ::= bucle
+              | salida
+
+bucle ::= while ( condicion ) { instrucciones }
+
+salida ::= printf ( cadena ) ;
+
+condicion ::= 0
+            | 1
+
+cadena ::= " caracteres "
+
+caracteres ::= caracter+
+
+caracter ::= letra
+           | digito
+           | espacio
+           | simbolo
+
+letra ::= a..z | A..Z
+
+digito ::= 0..9
+
+espacio ::= " "
+
+simbolo ::= . , : ; ! ? _

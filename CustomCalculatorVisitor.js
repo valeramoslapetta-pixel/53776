@@ -1,60 +1,34 @@
-import { Parser } from "antlr4";
-import CalculatorVisitor from "./generated/CalculatorVisitor.js";
-import CalculatorParser from "./generated/CalculatorParser.js";
+import CalculatorVisitor from './generated/CalculatorVisitor.js';
 
-export class CustomCalculatorVisitor extends CalculatorVisitor{
+export default class CustomCalculatorVisitor extends CalculatorVisitor {
 
-    constructor() {
-        super();
-        this.memory = new Map();   //Declaro una variable de instancia con una memoria temporal para hacer las reducciones
-    } 
-    
-    visitInt(ctx) {
-        //obtengo el lexema correspondiente al INT que reconocio en el texto y lo convierto a entero.
-        return parseInt(ctx.INT().getText());
+    visitPrograma(ctx) {
+        return this.visit(ctx.instrucciones());
     }
 
-    visitPrintExpr(ctx) {
-        const value = this.visit(ctx.expr());
-        console.log(`\nResultado: ${value}`);
+    visitInstrucciones(ctx) {
+        let codigo = "";
+
+        for (let instruccion of ctx.instruccion()) {
+            codigo += this.visit(instruccion) + "\n";
+        }
+
+        return codigo;
+    }
+
+    visitInstruccion(ctx) {
         return this.visitChildren(ctx);
-      }
-
-
-    visitMulDiv(ctx) {
-        /* Las subexpresiones se visitaran recursivamente hasta ir obteniendo los valores correspondientes */
-        const left =  this.visit(ctx.expr(0));   //visito la subexpresion a la izquierda de la operacion
-        const right = this.visit(ctx.expr(1));  //visito la subexpresion a la derecha de la operacion. 
-        if (ctx.op.type==CalculatorParser.MUL)
-          return left * right;
-        else
-          return left / right;
-      }
-
-      visitAddSub(ctx) {
-        const left =  this.visit(ctx.expr(0));  
-        const right = this.visit(ctx.expr(1));  
-        if (ctx.op.type==CalculatorParser.ADD){
-          return left + right; }
-        else
-          return left - right;
-      }
-
-      visitParens(ctx) {
-        return this.visit(ctx.expr());
-      }
-
-      visitId(ctx) {
-        const id = ctx.ID().getText();
-        if (this.memory.has(id)) return this.memory.get(id);
-        return 0;
     }
 
-      visitAssign(ctx) {
-        const id = ctx.ID().getText();
-        const value = this.visit(ctx.expr());
-        this.memory.set(id, value);
-        return value;
+    visitSalida(ctx) {
+        const texto = ctx.cadena().getText();
+        return `console.log(${texto});`;
     }
-    
+
+    visitBucle(ctx) {
+        const condicion = ctx.condicion().getText();
+        const instrucciones = this.visit(ctx.instrucciones());
+
+        return `while(${condicion}) {\n${instrucciones}}`;
+    }
 }

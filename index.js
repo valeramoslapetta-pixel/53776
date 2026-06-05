@@ -1,7 +1,6 @@
 import CalculatorLexer from "./generated/CalculatorLexer.js";
 import CalculatorParser from "./generated/CalculatorParser.js";
-import { CustomCalculatorListener } from "./CustomCalculatorListener.js";
-import { CustomCalculatorVisitor } from "./CustomCalculatorVisitor.js";
+import CustomCalculatorVisitor from "./CustomCalculatorVisitor.js";
 import antlr4, { CharStreams, CommonTokenStream, ParseTreeWalker } from "antlr4";
 import readline from 'readline';
 import fs from 'fs';
@@ -20,10 +19,23 @@ async function main() {
 
     // Proceso la entrada con el analizador e imprimo el arbol de analisis en formato texto
     let inputStream = CharStreams.fromString(input);
-    let lexer = new CalculatorLexer(inputStream);
-    let tokenStream = new CommonTokenStream(lexer);
-    let parser = new CalculatorParser(tokenStream);
-    let tree = parser.prog();
+let lexer = new CalculatorLexer(inputStream);
+let tokenStream = new CommonTokenStream(lexer);
+
+tokenStream.fill();
+
+console.log("\n=== TABLA DE LEXEMAS Y TOKENS ===");
+console.log("LEXEMA\t\tTOKEN");
+
+for (const token of tokenStream.tokens) {
+    if (token.type !== antlr4.Token.EOF) {
+        const tokenName = CalculatorLexer.symbolicNames[token.type];
+        console.log(`${token.text}\t\t${tokenName}`);
+    }
+}
+
+let parser = new CalculatorParser(tokenStream);
+    let tree = parser.programa();
     
     // Verifico si se produjeron errores
     if (parser.syntaxErrorsCount > 0) {
@@ -40,7 +52,13 @@ async function main() {
 
         // Utilizo un visitor para visitar los nodos que me interesan de mi arbol
         const visitor = new CustomCalculatorVisitor();
-        visitor.visit(tree);   
+const codigoJS = visitor.visit(tree);
+
+console.log("\n=== CÓDIGO JAVASCRIPT GENERADO ===");
+console.log(codigoJS);
+
+console.log("\n=== EJECUCIÓN ===");
+eval(codigoJS); 
     }
 }
 
