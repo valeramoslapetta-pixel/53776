@@ -19,7 +19,7 @@ Ejecución del código traducido.
 Instalación
 
 Clonar el repositorio:
-git clone el linck
+git clone https://github.com/valeramoslapetta-pixel/53776.git
 
 Ingresar al directorio del proyecto:
 cd ssl-antlr-calculator
